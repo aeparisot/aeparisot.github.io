@@ -1,2 +1,3 @@
-# aeparisot.github.io
-Abigail Parisot
+## Abigail Parisot:
+- Computational Data Science Senior
+
