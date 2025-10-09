@@ -2,7 +2,7 @@
 
 - 📫 Reach me @ parisot1@msu.edu <br>
 - ⚡ Computational Data Science Senior at Michigan State University  <br>
-- 🕹️ Aspiring Data Scientist for Quantum Computing <br>
+- 🕹️ Aspiring Data Scientist <br>
 - 🧩 CMSE Undergraduate Learning Assistant 
 
 
