@@ -1,8 +1,9 @@
 ## Hi, I'm Abigail (•ө•)
 
-~ Computational Data Science Senior at Michigan State University 🧠 <br>
-~ Aspiring Data Scientist in Quantum Computing 🕹️ <br>
-~ CMSE Undergraduate Learning Assistant 🧩
+- 📫 Reach me @ parisot1@msu.edu <br>
+- ⚡ Computational Data Science Senior at Michigan State University  <br>
+- 🕹️ Aspiring Data Scientist for Quantum Computing <br>
+- 🧩 CMSE Undergraduate Learning Assistant 
 
 
 # 💻 Tech Stack:
@@ -12,7 +13,3 @@
 ![](https://nirzak-streak-stats.vercel.app/?user=aeparisot&theme=github_dark&hide_border=true)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=aeparisot&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact)
 
----
-[![](https://visitcount.itsvg.in/api?id=aeparisot&icon=1&color=10)](https://visitcount.itsvg.in)
-
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
