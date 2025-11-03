@@ -1,5 +1,6 @@
 ## Hi, I'm Abigail (•ө•)
 
+- <a href="Parisot_Resume_110325_nocontact.pdf">
 - 📫 Reach me @ parisot1@msu.edu <br>
 - ⚡ Computational Data Science Senior at Michigan State University  <br>
 - 🕹️ Aspiring Data Scientist <br>
@@ -14,5 +15,4 @@
 ### 📊 GitHub Stats:
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aeparisot&stats_format=bytes)
 
-<embed src="Parisot_Resume_110325_nocontact.pdf" width="800px" height="1100px" />
 
