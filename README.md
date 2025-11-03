@@ -11,7 +11,7 @@ View my resume [here](./Parisot_Resume_110325_nocontact.pdf)
 </p>
 <p>
 💻 Tech Proficiencies:
-View a project in... <br>
+View a project in... 
 </p>
 <a href="https://github.com/aeparisot/StockExchangeModel" target="_blank" rel="noopener noreferrer">![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)</a> <a href="https://aeparisot.github.io" target="_blank" rel="noopener noreferrer"> ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)</a> <a href="https://github.com/aeparisot/StockExchangeModel" target="_blank" rel="noopener noreferrer"> ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)</a> <a href="https://github.com/aeparisot/R_Projects" target="_blank" rel="noopener noreferrer">![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white)</a> <br>
 <p>Other proficiencies:</p> 
