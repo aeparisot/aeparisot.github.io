@@ -14,5 +14,5 @@
 ### 📊 GitHub Stats:
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=aeparisot&stats_format=bytes)
 
-<embed src="Parisot_Resume_110325_nocontact.pdf" width="800px" height="2100px" />
+<embed src="Parisot_Resume_110325_nocontact.pdf" width="800px" height="1100px" />
 
