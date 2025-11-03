@@ -1,11 +1,12 @@
 ## Hi, I'm Abigail (•ө•)
 
-- View my resume [here](./Parisot_Resume_110325_nocontact.pdf)
+
 - 📫 Reach me @ parisot1@msu.edu <br>
 - ⚡ Computational Data Science Senior at Michigan State University  <br>
 - 🕹️ Aspiring Data Scientist <br>
 - 🧩 CMSE Undergraduate Learning Assistant 
 
+View my resume [here](./Parisot_Resume_110325_nocontact.pdf)
 
 ### 💻 Tech Proficiencies:
 **View a project in...** <br>
