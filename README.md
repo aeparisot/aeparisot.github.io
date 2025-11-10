@@ -7,7 +7,7 @@
 - 🧩 CMSE Undergraduate Learning Assistant 
 </ul>
 
-View my resume [here](./Parisot_Resume_110325_nocontact.pdf)
+<p>View my resume <a href="./Parisot_Resume_110325_nocontact.pdf">here</a></p>
 
 
 
