@@ -6,7 +6,7 @@ Hi, I'm Abigail
 - 🧩 CMSE Undergraduate Learning Assistant 
 
 
-View my resume <a href="./Parisot_Resume_110325_nocontact.pdf">here</a>
+View my resume <a href="./040426.pdf">here</a>
 
 ### 📂 Featured Projects:
 - <a href="https://github.com/Michael3448/CSE482-Final-Project" target="_blank" rel="noopener noreferrer"> Movie Recommender System</a>
