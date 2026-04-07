@@ -9,6 +9,7 @@ Hi, I'm Abigail
 View my resume <a href="./Parisot_Resume_110325_nocontact.pdf">here</a>
 
 ### 📂 Featured Projects:
+- <a href="https://github.com/Michael3448/CSE482-Final-Project" target="_blank" rel="noopener noreferrer"> Movie Recommender System</a>
 - <a href="https://github.com/aeparisot/R_Projects" target="_blank" rel="noopener noreferrer">R Projects Repository</a>
 - <a href="https://github.com/aeparisot/StockExchangeModel" target="_blank" rel="noopener noreferrer">Stock Exchange Model in C++</a>
 - <a href="https://github.com/aeparisot/CMSE381Project" target="_blank" rel="noopener noreferrer">Data Classification in Python</a>
