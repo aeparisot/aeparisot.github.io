@@ -1,14 +1,16 @@
 
 Hi, I'm Abigail
-- 📫 Reach me @ parisot1@msu.edu <br>
-- ⚡ Computational Data Science Senior at Michigan State University  <br>
-- 🕹️ Aspiring Data Scientist <br>
-- 🧩 CMSE Undergraduate Learning Assistant 
+Computational Data Science Senior at Michigan State University  <br>
+- Reach me @ parisot1@msu.edu <br>
+- CMSE Undergraduate Learning Assistant <br>
+- Computational biologist
 
 
 View my resume <a href="./040426.pdf">here</a>
 
 ### 📂 Featured Projects:
+- <a href= target="_blank" rel="noopener noreferrer"> Phishing URL Classification</a>
+- <a href= target="_blank" rel="noopener noreferrer"> Handmade Multi-layer Perceptron</a>
 - <a href="https://github.com/Michael3448/CSE482-Final-Project" target="_blank" rel="noopener noreferrer"> Movie Recommender System</a>
 - <a href="https://github.com/aeparisot/R_Projects" target="_blank" rel="noopener noreferrer">R Projects Repository</a>
 - <a href="https://github.com/aeparisot/StockExchangeModel" target="_blank" rel="noopener noreferrer">Stock Exchange Model in C++</a>
