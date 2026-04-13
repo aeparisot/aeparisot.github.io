@@ -9,7 +9,7 @@ Computational Data Science Senior at Michigan State University  <br>
 View my resume <a href="./040426.pdf">here</a>
 
 ### 📂 Featured Projects:
-- <a href= target="_blank" rel="noopener noreferrer"> Phishing URL Classification</a>
+- <a href="https://github.com/aeparisot/CSE-404" target="_blank" rel="noopener noreferrer"> Phishing URL Classification</a>
 - <a href= target="_blank" rel="noopener noreferrer"> Handmade Multi-layer Perceptron</a>
 - <a href="https://github.com/Michael3448/CSE482-Final-Project" target="_blank" rel="noopener noreferrer"> Movie Recommender System</a>
 - <a href="https://github.com/aeparisot/R_Projects" target="_blank" rel="noopener noreferrer">R Projects Repository</a>
