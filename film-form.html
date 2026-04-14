@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CineLog — Movie Ratings</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1410;
+    --ink-muted: #5C4F42;
+    --ink-faint: #A8998A;
+    --red: #C0392B;
+    --red-light: #F5E9E8;
+    --gold: #B8860B;
+    --border: #D4C9BB;
+    --card-bg: #FDFAF5;
+  }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* Header */
+  header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border: 40px solid rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 60px;
+    width: 100px; height: 100px;
+    border: 20px solid rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .logo span {
+    color: var(--red);
+    font-style: italic;
+  }
+  .tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+  }
+
+  /* Main layout */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  /* Form card */
+  .form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--red);
+    border-radius: 2px 0 0 2px;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .field-full {
+    margin-bottom: 1.2rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.45rem;
+  }
+  label .optional {
+    font-size: 0.6rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    text-transform: none;
+    font-style: italic;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.65rem 0.85rem;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+    resize: vertical;
+  }
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: var(--ink-muted);
+    background: #fff;
+  }
+  textarea { min-height: 90px; }
+
+  /* Star rating */
+  .star-field label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.45rem;
+  }
+  .stars {
+    display: flex;
+    gap: 4px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .stars input { display: none; }
+  .stars label {
+    font-size: 1.9rem;
+    color: var(--border);
+    cursor: pointer;
+    transition: color 0.1s, transform 0.1s;
+    margin: 0;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1;
+    user-select: none;
+  }
+  .stars label:hover,
+  .stars label:hover ~ label,
+  .stars input:checked ~ label {
+    color: var(--gold);
+  }
+  .stars label:active { transform: scale(1.25); }
+  .rating-display {
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    margin-top: 0.4rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Submit button */
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    margin-top: 0.4rem;
+  }
+  .btn-submit:hover { background: #2d241c; }
+  .btn-submit:active { transform: scale(0.98); }
+  .btn-submit svg { width: 14px; height: 14px; }
+
+  /* Toast */
+  .toast {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    background: #1c3a2a;
+    color: #a8e6c6;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    margin-top: 1rem;
+    animation: fadeIn 0.2s ease;
+  }
+  .toast.show { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  /* Log section */
+  .log-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .log-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .log-count {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .btn-export {
+    background: none;
+    border: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .btn-export:hover { border-color: var(--ink-muted); color: var(--ink); }
+  .btn-export svg { width: 12px; height: 12px; }
+
+  /* Entries table */
+  .entries-wrap {
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--card-bg);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+  }
+  thead tr {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  thead th {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #f8f3ea; }
+  tbody td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .td-stars { color: var(--gold); letter-spacing: 1px; font-size: 0.9rem; }
+  .td-details { color: var(--ink-muted); font-size: 0.73rem; font-style: italic; }
+  .td-delete {
+    background: none; border: none; cursor: pointer;
+    color: var(--ink-faint); font-size: 1rem; padding: 0 4px;
+    transition: color 0.1s;
+  }
+  .td-delete:hover { color: var(--red); }
+
+  .empty-state {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+  .empty-state .icon { font-size: 2rem; display: block; margin-bottom: 0.6rem; }
+
+  /* validation */
+  input.invalid, textarea.invalid { border-color: var(--red); background: var(--red-light); }
+  .err { font-size: 0.68rem; color: var(--red); margin-top: 0.3rem; letter-spacing: 0.04em; display: none; }
+  .err.show { display: block; }
+
+  @media (max-width: 520px) {
+    .field-row { grid-template-columns: 1fr; }
+    .logo { font-size: 2rem; }
+    main { padding: 1.5rem 1rem; }
+    .form-card { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Film<span>Form</span></div>
+    <div class="tagline">KNN Research Data Collection</div>
+  </div>
+</header>
+
+<main>
+<form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbzYmtmUN_8RYeQ8fT_zLT2oPfREdxYAkZUpDFNYRS2k9bwuMdZsp9fB5jHwl2vJnAtozQ/exec"
+  id="film-form"
+  onsubmit="handleSubmit(event)"
+  >
+  <!-- Form -->
+</script>
+
+  <div class="form-card">
+    <div class="section-label">Log a rating</div>
+
+    <div class="field-row">
+      <div>
+        <label for="inp-username">Username</label>
+        <input name = "username" type="text" id="inp-username" placeholder="e.g. sparty1855" autocomplete="username" />
+        <div class="err" id="err-username">Username is required.</div>
+      </div>
+      <div>
+        <label for="inp-title">Movie title</label>
+        <input name="title" type="text" id="inp-title" placeholder="e.g. The Shining (1980)" />
+        <div class="err" id="err-title">Movie title is required.</div>
+      </div>
+    </div>
+
+    <div class="field-full star-field">
+      <label>Rating <span id="rating-text" style="color:var(--ink-faint);font-style:italic;text-transform:none;letter-spacing:0;">— pick a star</span></label>
+      <div class="stars">
+        <input type="radio" name="rating" id="s5" value="5" /><label for="s5" title="5">★</label>
+        <input type="radio" name="rating" id="s4" value="4" /><label for="s4" title="4">★</label>
+        <input type="radio" name="rating" id="s3" value="3" /><label for="s3" title="3">★</label>
+        <input type="radio" name="rating" id="s2" value="2" /><label for="s2" title="2">★</label>
+        <input type="radio" name="rating" id="s1" value="1" /><label for="s1" title="1">★</label>
+      </div>
+      <div class="err" id="err-rating">Please select a rating.</div>
+    </div>
+
+    <div class="field-full">
+      <label for="inp-details">Details <span class="optional">(optional)</span></label>
+      <textarea name="details" id="inp-details" placeholder="Your thoughts on the film..."></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M2 8h12M9 3l5 5-5 5"/>
+      </svg>
+      Add to log
+    </button>
+    <div class="toast" id="toast">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8l4 4 8-8"/></svg>
+      Entry saved successfully.
+    </div>
+  </div>
+
+  <!-- Log -->
+  <div>
+    <div class="log-header">
+      <span class="log-title">Today's log</span>
+      <div style="display:flex;align-items:center;gap:0.8rem;">
+        <span class="log-count" id="log-count">0 entries</span>
+        <button class="btn-export" onclick="exportCSV()">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v8M5 7l3 3 3-3M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1"/></svg>
+          Export CSV
+        </button>
+      </div>
+    </div>
+
+    <div class="entries-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>username</th>
+            <th>movie</th>
+            <th>rating</th>
+            <th>details</th>
+            <th>date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="entries-body">
+          <tr><td colspan="6"><div class="empty-state"><span class="icon">🎬</span>No entries this visit. Log the first rating above.</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</form>
+</main>
+
+<script>
+let entries = [];
+
+const LABELS = ['', 'Poor', 'Okay', 'Average', 'Good', 'Excellent'];
+const STARS  = ['', '★', '★★', '★★★', '★★★★', '★★★★★'];
+
+document.querySelectorAll('.stars input').forEach(radio => {
+  radio.addEventListener('change', () => {
+    document.getElementById('rating-text').textContent = '— ' + LABELS[radio.value];
+  });
+});
+
+function validate() {
+  let ok = true;
+  const username = document.getElementById('inp-username');
+  const title    = document.getElementById('inp-title');
+  const rating   = document.querySelector('input[name="rating"]:checked');
+
+  const setErr = (id, field, show) => {
+    document.getElementById(id).classList.toggle('show', show);
+    field.classList.toggle('invalid', show);
+  };
+
+  setErr('err-username', username, !username.value.trim());
+  setErr('err-title',    title,    !title.value.trim());
+  document.getElementById('err-rating').classList.toggle('show', !rating);
+
+  if (!username.value.trim() || !title.value.trim() || !rating) ok = false;
+  return ok;
+}
+
+async function handleSubmit(e) {
+  e.preventDefault(); // stop page reload
+
+  if (!validate()) return;
+
+  const form = document.getElementById('film-form');
+  const formData = new FormData(form);
+
+  try {
+    // 🔥 Send to Google Sheets
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.json();
+
+    if (result.result !== 'success') {
+      throw new Error(result.error || 'Unknown error');
+    }
+
+    // ✅ Update UI instantly (your existing logic)
+    const rating = formData.get('rating');
+
+    entries.unshift({
+      username: formData.get('username').trim(),
+      title:    formData.get('title').trim(),
+      rating:   +rating,
+      details:  formData.get('details').trim(),
+      date:     new Date().toLocaleDateString('en-US', {
+        year:'numeric', month:'short', day:'numeric'
+      })
+    });
+
+    renderTable();
+    showToast();
+
+    // ✅ Reset form
+    form.reset();
+    document.getElementById('rating-text').textContent = '— pick a star';
+
+  } catch (err) {
+    alert('Submission failed: ' + err.message);
+    console.error(err);
+  }
+}
+
+function renderTable() {
+  const body = document.getElementById('entries-body');
+  document.getElementById('log-count').textContent = entries.length + (entries.length === 1 ? ' entry' : ' entries');
+
+  if (!entries.length) {
+    body.innerHTML = '<tr><td colspan="6"><div class="empty-state"><span class="icon">🎬</span>No entries yet. Log your first rating above.</div></td></tr>';
+    return;
+  }
+
+  body.innerHTML = entries.map((e, i) => `
+    <tr>
+      <td><strong>${esc(e.username)}</strong></td>
+      <td>${esc(e.title)}</td>
+      <td><span class="td-stars">${STARS[e.rating]}</span></td>
+      <td class="td-details">${e.details ? esc(e.details) : '<span style="color:var(--ink-faint)">—</span>'}</td>
+      <td style="color:var(--ink-faint);white-space:nowrap">${e.date}</td>
+      <td><button class="td-delete" onclick="deleteEntry(${i})" title="Remove (this doesnt work on the back end)">×</button></td>
+    </tr>
+  `).join('');
+}
+
+function deleteEntry(i) {
+  entries.splice(i, 1);
+  renderTable();
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function exportCSV() {
+  if (!entries.length) { alert('No entries to export yet.'); return; }
+  const pwd = prompt('Enter admin password to export:');
+  if (pwd === null) return;
+  if (pwd !== 'pleasedonttakemydatasetimbutajuniordev') { alert('Incorrect password.'); return; }
+  const header = ['Username', 'Movie Title', 'Rating (out of 5)', 'Details', 'Date'];
+  const rows = entries.map(e => [
+    csvCell(e.username),
+    csvCell(e.title),
+    e.rating,
+    csvCell(e.details),
+    csvCell(e.date)
+  ]);
+  const csv = [header, ...rows].map(r => r.join(',')).join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = 'filmform-ratings.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function csvCell(val) {
+  const s = String(val ?? '');
+  return s.includes(',') || s.includes('"') || s.includes('\n')
+    ? '"' + s.replace(/"/g, '""') + '"'
+    : s;
+}
+</script>
+</body>
+</html>
