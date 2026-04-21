@@ -1,6 +1,6 @@
 
 Hi, I'm Abigail
-Computational Data Science Senior at Michigan State University  <br>
+- Computational Data Science Senior at Michigan State University  <br>
 - Reach me @ parisot1@msu.edu <br>
 - CMSE Undergraduate Learning Assistant <br>
 - Computational biologist
