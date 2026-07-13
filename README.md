@@ -1,8 +1,8 @@
 # [Abigail Parisot](https://aeparisot.github.io/)
 
-Hi, I'm Abigail — AI/ML Controls Development @ FEV | Student Assistant @ Wang Lab | Supporting Computational Biology, Powertrain Dynamics, & Programming Education
+Hi, I'm Abigail — AI/ML Controls Development @ FEV — Student Assistant @ Wang Lab — Supporting Computational Biology, Powertrain Dynamics, & Programming Education
 
-- 📍 East Lansing, Michigan | Auburn Hills, Michigan | Anderson, SC
+- 📍 East Lansing, Michigan — Auburn Hills, Michigan — Anderson, SC
 - 🎓 Computational Data Science, B.S. @ Michigan State University (Dec 2026)
 - 📫 Reach me @ parisot1@msu.edu
 - 🔗 [LinkedIn](https://www.linkedin.com/in/abigail-parisot) · [Resume (PDF)](https://aeparisot.github.io/040426.pdf)
