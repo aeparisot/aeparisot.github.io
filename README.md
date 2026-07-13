@@ -7,7 +7,7 @@ Hi, I'm Abigail — AI/ML Controls Development @ FEV | Student Assistant @ Wang 
 - 📫 Reach me @ parisot1@msu.edu
 - 🔗 [LinkedIn](https://www.linkedin.com/in/abigail-parisot) · [Resume (PDF)](https://aeparisot.github.io/040426.pdf)
 
-### 🧪 Experience
+### 🧪 Work and Research Experience
 
 **FEV North America, Inc.** — AI/ML Controls Engineering Assistant (Internship)
 *May 2026 – Present, Auburn Hills, MI*
@@ -28,6 +28,7 @@ Hi, I'm Abigail — AI/ML Controls Development @ FEV | Student Assistant @ Wang 
 - Educated students in Git and PowerShell through in-class examples and activities
 - Hosted two weekly office hours to reinforce instruction through one-on-one lessons; graded 50–100 assignments weekly
 
+
 ### 🎓 Education
 
 **Michigan State University** — B.S., Computational Data Science
@@ -45,6 +46,7 @@ Study abroad coursework (English and Spanish) with emphasis on rigid system dyna
 - [Multi-layer Perceptron](https://github.com/aeparisot/Multi-Layer-Perceptron)
 - [Movie Recommender System](https://github.com/Michael3448/CSE482-Final-Project)
 - [Stock Exchange Model in C++](https://github.com/aeparisot/StockExchangeModel)
+
 <details>
 <summary>Earlier experience</summary>
 
