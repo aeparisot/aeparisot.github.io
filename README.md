@@ -5,7 +5,7 @@ Hi, I'm Abigail — AI/ML Controls Development @ FEV — Student Assistant @ Wan
 - 📍 East Lansing, Michigan — Auburn Hills, Michigan — Anderson, SC
 - 🎓 Computational Data Science, B.S. @ Michigan State University (Dec 2026)
 - 📫 Reach me @ parisot1@msu.edu
-- 🔗 [LinkedIn](https://www.linkedin.com/in/abigail-parisot) · [Resume (PDF)](https://aeparisot.github.io/parisot_resume_pauto_07132026_nophone.pdf)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/abigail-parisot) · [Resume (PDF)](https://github.com/aeparisot/aeparisot.github.io/blob/main/parisot_resume_pauto_07132026_nophone.pdf))
 
 ### 🧪 Work and Research Experience
 
